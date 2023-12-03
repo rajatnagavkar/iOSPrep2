@@ -7,13 +7,17 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
+    @State private var questions = ["Question1","Question2","Question3","Question4","Question5","Question6","Question7","Question8","Question9","Question10"]
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List{
+                ForEach(questions,id: \.self){ question in
+                    Text(question)
+                }
+            }
         }
         .padding()
     }
